@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../../odoo/addons/survey"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../cl_luzit_survey"
+		}
+	],
+	"settings": {}
+}

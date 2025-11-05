@@ -1,0 +1,5 @@
+<odoo>
+    <template id="survey_conditional_questions_assets" name="Survey Conditional Questions Assets">
+        <script type="text/javascript" src="/survey_conditional_questions/static/src/js/conditional_questions.js" />
+    </template>
+</odoo>

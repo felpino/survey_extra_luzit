@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="survey_question_form">
+        <field name="name">Form view for survey conditional question</field>
+        <field name="model">survey.question</field>
+        <field name="inherit_id" ref="survey.survey_question_form"/>
+        <field name="arch" type="xml">
+            <field name="constr_mandatory" position="after">
+                <field name="survey_id" required="0" readonly="1" invisible="1" />
+                <field name="page_id" invisible="1" required="0"/>
+                <field name="conditional" attrs="{'readonly':[('survey_id', '=', False)]}"/>
+                
+                <field name="question_conditional_id" domain="[('survey_id', '=', survey_id), ('question_type', 'in', ['multiple_choice', 'simple_choice'])]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+                <field name="answer_id" domain="[('question_id', '=', question_conditional_id)]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+
+                <field name="question_conditional_id_2" domain="[('survey_id', '=', survey_id), ('question_type', 'in', ['multiple_choice', 'simple_choice'])]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+                <field name="answer_id_2" domain="[('question_id', '=', question_conditional_id_2)]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+
+                <field name="question_conditional_id_3" domain="[('survey_id', '=', survey_id),('question_type', 'in', ['multiple_choice', 'simple_choice'])]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+                <field name="answer_id_3" domain="[('question_id', '=', question_conditional_id_3)]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+
+                <field name="question_conditional_id_4" domain="[('survey_id', '=', survey_id),('question_type', 'in', ['multiple_choice', 'simple_choice'])]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+                <field name="answer_id_4" domain="[('question_id', '=', question_conditional_id_4)]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+
+                <field name="question_conditional_id_5" domain="[('survey_id', '=', survey_id), ('question_type', 'in', ['multiple_choice', 'simple_choice'])]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+                <field name="answer_id_5" domain="[('question_id', '=', question_conditional_id_5)]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+
+                <field name="question_conditional_id_6" domain="[('survey_id', '=', survey_id), ('question_type', 'in', ['multiple_choice', 'simple_choice'])]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+                <field name="answer_id_6" domain="[('question_id', '=', question_conditional_id_6)]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+
+                <field name="question_conditional_id_7" domain="[('survey_id', '=', survey_id), ('question_type', 'in', ['multiple_choice', 'simple_choice'])]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+                <field name="answer_id_7" domain="[('question_id', '=', question_conditional_id_7)]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+
+                <field name="question_conditional_id_8" domain="[('survey_id', '=', survey_id), ('question_type', 'in', ['multiple_choice', 'simple_choice'])]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+                <field name="answer_id_8" domain="[('question_id', '=', question_conditional_id_8)]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+
+                <field name="question_conditional_id_9" domain="[('survey_id', '=', survey_id), ('question_type', 'in', ['multiple_choice', 'simple_choice'])]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+                <field name="answer_id_9" domain="[('question_id', '=', question_conditional_id_9)]" attrs="{'invisible':[('conditional','!=',True)]}"/>
+
+                <field name="or_and" attrs="{'invisible':[('conditional','!=',True)]}"/>
+            </field>
+        </field>
+    </record>
+</odoo>

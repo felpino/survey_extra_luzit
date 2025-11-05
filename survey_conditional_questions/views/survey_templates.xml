@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="survey_conditional_questions_layout" inherit_id="survey.layout" name="Survey Layout">
+            <xpath expr="//t[@t-call-assets='survey.survey_assets']" position="before">
+                <t t-call-assets="survey_conditional_questions.survey_conditional_questions_assets" lazy_load="True"/>
+            </xpath>
+        </template>
+
+        <!-- Question widgets -->
+        <template id="c_free_text" inherit_id="survey.free_text" name="Free text box">
+            <xpath expr="//textarea" position="attributes">
+                <attribute name="class" add="check_conditional_input" separator=" "/>
+            </xpath>
+        </template>
+
+        <template id='c_textbox' inherit_id="survey.textbox" name="Text box">
+            <xpath expr="//input" position="attributes">
+                <attribute name="class" add="check_conditional_input" separator=" "/>
+            </xpath>
+        </template>
+
+        <template id="c_numerical_box" inherit_id="survey.numerical_box" name="Numerical box">
+            <xpath expr="//input" position="attributes">
+                <attribute name="class" add="check_conditional_input" separator=" "/>
+            </xpath>
+        </template>
+
+        <template id="c_date" inherit_id="survey.date" name="Date box">
+            <xpath expr="//input" position="attributes">
+                <attribute name="class" add="check_conditional_input" separator=" "/>
+            </xpath>
+        </template>
+
+
+        <template id="c_datetime" inherit_id="survey.datetime" name="DateTime box">
+            <xpath expr="//input" position="attributes">
+                <attribute name="class" add="check_conditional_input" separator=" "/>
+            </xpath>
+        </template>
+
+
+
+        <template id="simple_choice" inherit_id="survey.simple_choice" name="Simple choice">
+
+            <xpath expr="//textarea" position="attributes">
+                <attribute name="class" add="check_conditional_input" separator=" "/>
+            </xpath>
+
+            <xpath expr="//input[@type='radio']" position="attributes">
+                <attribute name="class" add="check_conditional_radio" separator=" "/>
+            </xpath>
+
+            <xpath expr="//option" position="attributes">
+                <attribute name="class" add="check_conditional_option" separator=" "/>
+            </xpath>
+        </template>
+
+
+
+        <template id="c_multiple_choice" inherit_id="survey.multiple_choice" name="Multiple choice">
+            <xpath expr="//input[@type='checkbox']" position="attributes">
+                <attribute name="class" add="check_conditional_checkbox" separator=" "/>
+            </xpath>
+
+            <xpath expr="//textarea" position="attributes">
+                <attribute name="class" add="check_conditional_input" separator=" "/>
+            </xpath>
+
+
+        </template>
+
+        <template id="c_matrix" inherit_id="survey.matrix" name="Matrix">
+
+            <xpath expr="//input[@type='checkbox']" position="attributes">
+                <attribute name="class" add="check_conditional_checkbox" separator=" "/>
+            </xpath>
+
+            <xpath expr="//input[@type='radio']" position="attributes">
+                <attribute name="class" add="check_conditional_radio" separator=" "/>
+            </xpath>
+
+            <xpath expr="//textarea" position="attributes">
+                <attribute name="class" add="check_conditional_input" separator=" "/>
+            </xpath>
+        </template>
+
+
+    </data>
+</odoo>
